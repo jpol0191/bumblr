@@ -46,7 +46,27 @@ $eczar-font:  'Eczar', serif;
 	background: $white-color;
 	font-family: $dosis-font;
 	margin: 0 auto;
-	height: 100px;
+	height: 120px;
 	width: 400px;
 	text-align: center;
+	border-radius: 5px; 
+}
+
+#post-show-form-button{
+	font-family: $dosis-font;
+	font-size: 15px;
+	width: 70px;
+	height: 30px;
+	background: $active-color;
+	color: $white-color;
+	border: none;
+	border-radius: 3px;
+}
+
+#user-show-post-form input{
+	width: 80%;
+}
+
+#user-show-post-form textarea{
+	width: 80%;	
 }

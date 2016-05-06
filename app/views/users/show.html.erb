@@ -16,7 +16,7 @@
 				<%= f.search_field :title, placeholder: "Title" %><br>
 				<%= f.text_area :body, placeholder: "Type your post here."%>
 				<%= f.hidden_field :user_id, value: current_user.id %>
-				<%= f.submit "Post" %>
+				<%= f.submit "Post", id: "post-show-form-button" %>
 			<% end %>
 		</div>
 
