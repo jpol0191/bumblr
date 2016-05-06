@@ -1,0 +1,62 @@
+<div id="user-show-page">
+	
+	<!-- Show edit button if you own this page -->
+	<% if current_user == @user %>
+		<%= link_to "Edit Profile", edit_user_path(@user.id), id: "user-show-editprofile" %>
+	<% end %>
+
+	<h1 id="user-show-header"><%= @user.username %>'s page</h1>
+
+	<!-- create post code -->
+	<h3 id="user-show-postword">Post:</h3>
+	<% if current_user == @user %>
+		<div id="user-show-post-form">
+			<%= form_for Post.new do |f|%>
+				<%= f.label "Create Post: " %><br>
+				<%= f.search_field :title, placeholder: "Title" %><br>
+				<%= f.text_area :body, placeholder: "Type your post here."%>
+				<%= f.hidden_field :user_id, value: current_user.id %>
+				<%= f.submit "Post" %>
+			<% end %>
+		</div>
+
+	<% end %>
+
+
+	<% @posts.reverse.each do |post| %>
+		<div id="user_post">
+			Title:<br> <%= post.title %><br>
+			Body: <br> 
+			<p>
+				<%= post.body %><br>
+			</p> 
+			<hr>
+
+			<div class="post_comment">
+				<%= form_for Comment.new do |f|%>
+					<%= f.text_area :body, placeholder: "Comment here." %>
+					<%= f.hidden_field :post_id, value: post.id %>
+					<%= f.hidden_field :user_id, value: current_user.id%>
+					<%= f.submit "Comment" %>
+				<% end %>
+
+				<% comments = post.comments%>
+
+				<% comments.each do |comment|%>
+					<div class="comment">
+						<p>
+							<%= comment.body %>
+						</p>
+						by: <%= link_to "#{comment.user.username}", comment.user %>
+						<% if current_user.id == comment.user.id %>
+							<%= button_to("Delete Comment", comment_path(comment.id),:params =>{:user_id => post.user_id}, method: :delete) %>
+						<% end %>
+					</div>
+				<% end %>
+			</div>
+
+		</div>
+		<hr>
+	<% end %>
+
+</div>

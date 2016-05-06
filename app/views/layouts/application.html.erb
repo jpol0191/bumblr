@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsBlog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Eczar:400,800' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Dosis:400,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="header">
+	<%= link_to "Bumblr.", root_path , id: "header-title"%>
+	<% if session[:user_id]%>
+		<div id="log-out">
+			<%= button_to("Log out", logout_path, method: :delete) %>
+		</div>
+	<% else %>
+		<div id="log-in">
+			<%= button_to("Log In", root_path, method: :get) %>
+		</div>
+	<% end %>	
+	<% if session[:user_id] %>
+		<div id="header_username">
+			<%= current_user.username%>
+		</div>
+	<% else%>
+		<%= button_to("Sign Up",new_user_path, method: :get )%>
+	<% end %>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

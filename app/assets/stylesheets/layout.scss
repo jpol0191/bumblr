@@ -1,0 +1,56 @@
+$primary-color: #395875;
+$acent-color: #2C4762;
+$active-color: #719744;
+$grey-color: #A1ADB9;
+$white-color: #F2F2F2;
+$dosis-font: 'Dosis', sans-serif;
+$eczar-font:  'Eczar', serif;
+
+#header{
+	width: 100%;
+	height: 70px;
+	background: $acent-color;
+}
+
+#header-title{
+	float:left;
+	text-decoration: none;
+	color: $white-color;
+	font-size: 60px;
+	margin-left: 10px;
+}
+
+#header-title:hover{
+	color: $active-color;
+}
+
+#header_username{
+	float: right;
+	margin: 25px 10px;
+	font-family: $dosis-font;
+	font-size:15px;
+	color: $white-color;
+}
+
+#header_username:hover{
+	color: $active-color;
+	cursor: default;
+}
+#header input{
+	font-family: $dosis-font;
+	font-size: 15px;
+	float: right;
+	margin: 18px 10px;
+	width: 70px;
+	height: 30px;
+	background: $active-color;
+	color: $white-color;
+	border: none;
+	border-radius: 3px;
+
+}
+
+#header input:hover{
+	color: $acent-color;
+}
+

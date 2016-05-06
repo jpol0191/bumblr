@@ -1,0 +1,52 @@
+$primary-color: #395875;
+$acent-color: #2C4762;
+$active-color: #719744;
+$grey-color: #A1ADB9;
+$white-color: #F2F2F2;
+$dosis-font: 'Dosis', sans-serif;
+$eczar-font:  'Eczar', serif;
+
+#user-show-page{
+	width: 900px;
+	margin: 10px auto;
+	background: $grey-color;
+	border-radius: 5px;
+	overflow: hidden;
+
+}
+
+#user-show-editprofile{
+	display: block;
+	background: $acent-color;
+	color: $white-color;
+	text-decoration: none;
+	font-family: $dosis-font;
+	padding: 10px;
+}
+
+#user-show-editprofile:hover{
+	color: $active-color;
+}
+
+#user-show-header{
+	display: block;
+	color: $white-color;
+	font-family: $dosis-font;
+	margin-left: 10px;
+	text-shadow: 2px 2px black;
+}
+
+#user-show-postword{
+	font-family: $dosis-font;
+	color: $white-color;
+	margin-left: 10px;
+}
+
+#user-show-post-form{
+	background: $white-color;
+	font-family: $dosis-font;
+	margin: 0 auto;
+	height: 100px;
+	width: 400px;
+	text-align: center;
+}
