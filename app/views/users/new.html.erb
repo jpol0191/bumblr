@@ -1,15 +1,14 @@
-<h1>Users#new</h1>
-<h2>Sign Up</h2>
-<%= form_for @user do |f| %>
-	<%= f.label :username %>
-	<%= f.search_field :username %>
+<div id="user-page-signup">
+	<h2>Sign Up</h2>
+	<%= form_for @user do |f| %>
 
-	<%= f.label :password %>
-	<%= f.password_field :password %>
+		<%= f.search_field :username, placeholder: "Username" , class: "user-signup-txt"%>
 
-	<%= f.label "Retype password" %>
-	<%= f.password_field :repassword %>
+		<%= f.password_field :password, placeholder: "Password", class: "user-signup-txt" %>
 
-	<%= f.submit "Sign Up" %>
-<% end %>
-<%= flash[:danger] %>
+		<%= f.password_field :repassword, placeholder: "Retype Password", class: "user-signup-txt" %>
+
+		<%= f.submit "Sign Up", id: "user-signup-btn" %>
+	<% end %>
+	<%= flash[:danger] %>
+</div>
