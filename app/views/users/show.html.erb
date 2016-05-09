@@ -29,8 +29,9 @@
 			<p>
 				<%= post.body %><br>
 			</p> 
-			<%= link_to("Delete Post", post_path(post.id), method: :delete) %>
-
+			<% if current_user == @user %>
+				<%= link_to("Delete Post", post_path(post.id), method: :delete) %>
+			<% end %>
 			<div class="post_comment">
 				<%= form_for Comment.new do |f|%>
 					<%= f.text_area :body, placeholder: "Comment here." %>
