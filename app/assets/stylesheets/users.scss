@@ -46,10 +46,11 @@ $eczar-font:  'Eczar', serif;
 	background: $white-color;
 	font-family: $dosis-font;
 	margin: 0 auto;
-	height: 120px;
+	min-height: 120px;
 	width: 400px;
 	text-align: center;
 	border-radius: 5px; 
+
 }
 
 #post-show-form-button{
@@ -61,12 +62,161 @@ $eczar-font:  'Eczar', serif;
 	color: $white-color;
 	border: none;
 	border-radius: 3px;
+	margin-bottom: 10px
+}
+
+#post-show-form-button:hover{
+	color: $primary-color;
 }
 
 #user-show-post-form input{
 	width: 80%;
+
 }
 
 #user-show-post-form textarea{
 	width: 80%;	
+	max-width: 90%;
+}
+
+.user-post{
+	background: $white-color;
+	border-radius: 5px;
+	width: 850px;
+	margin: 10px auto;
+	padding: 10px;
+	font-family: $dosis-font;
+}
+
+.user-post-title{
+	font-family: $dosis-font;
+	font-weight: bold;
+}
+
+.comment{
+	background: $primary-color;
+	color: $white-color;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px;
+}
+
+.comment a{
+	text-decoration: none;
+	color: white;
+}
+
+.comment p {
+	display: inline;
+	word-break: break-word;
+}
+
+.comment input{
+	font-family: $dosis-font;
+	font-size: 15px;
+	width: 150px;
+	height: 30px;
+	background: $active-color;
+	color: $white-color;
+	border: none;
+	border-radius: 3px;
+	float: right;
+	z-index: 2;
+}
+
+.comment input:hover{
+	color: $primary-color;
+}
+
+.comment-author {
+	bottom: -25px;
+	position: relative;
+	width: 40%;
+}
+
+#new_comment{
+	background: $primary-color;
+	color: $white-color;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px;
+}
+
+#new_comment textarea{
+	min-width: 80%;
+	max-width: 90%;
+}
+
+#new_comment input{
+	display: block;
+	font-family: $dosis-font;
+	font-size: 15px;
+	width: 150px;
+	height: 30px;
+	background: $active-color;
+	color: $white-color;
+	border: none;
+	border-radius: 3px;
+	float: right;
+}
+
+#new_comment input:hover{
+	color: $primary-color;
+}
+
+#user-edit-page{
+	font-family: $dosis-font;
+	background: $grey-color;
+	height: 300px;
+	width: 300px;
+	overflow: hidden;
+	margin-top: 0;
+	border-radius: 5px;
+	margin:0 auto;
+	margin-top: 200px;
+}
+#user-edit-page h1{
+	color: $white-color;
+	text-shadow: 2px 2px black;
+	background: $primary-color;
+	margin-top: 0;
+	padding: 5px;
+	font-size: 20px;
+}
+
+.user-edit-page-txt{
+	display: block;
+	margin: 0 auto;
+	width: 200px;
+	height: 30px;
+	border: none;
+	border-radius: 5px;
+	background: $white-color;
+}
+
+.user-edit-page-btn{
+	display: block;
+	font-family: $dosis-font;
+	font-size: 15px;
+	width: 150px;
+	height: 30px;
+	background: $active-color;
+	color: $white-color;
+	border: none;
+	border-radius: 3px;
+	margin: 0 auto;
+}
+
+#delete-btn{
+	display: block;
+	font-family: $dosis-font;
+	font-size: 15px;
+	width: 150px;
+	height: 30px;
+	background: red;
+	color: $white-color;
+	border: none;
+	border-radius: 3px;
+	margin: 0 auto;
+	margin-top: 20px;
 }

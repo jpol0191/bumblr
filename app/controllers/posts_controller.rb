@@ -1,10 +1,13 @@
 class PostsController < ApplicationController
-  def index
+  def destroy
+    post = Post.find(params[:id])
+    user = User.find(post.user_id)
+    post.comments.each do |comment|
+      comment.delete
+    end
+    post.delete
+    redirect_to user_path(user)
   end
-
-  def show
-  end
-
   def create
   	Post.create(post_params)
   	redirect_to current_user

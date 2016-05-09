@@ -1,12 +1,15 @@
-<h1>This <%= "#{@user.username}'s"%> edit page</h1>
+<div id="user-edit-page">
+	<h1><%= "#{@user.username}'s"%> edit page</h1>
 
-<%= form_for @user do |f|%>
+	<%= form_for @user do |f|%>
 
-	<%= f.search_field :username, placeholder: "Username" %><br>
-	<%= f.password_field :password, placeholder: "Password"%><br>
+		<%= f.search_field :username, placeholder: "Username", class: "user-edit-page-txt" %><br>
+		<%= f.password_field :password, placeholder: "Password", class: "user-edit-page-txt"%><br>
 
-	<%= f.hidden_field :id, value: @user.id %><br>
-	<%= f.submit "Save Changes"%>
-<% end %>
+		<%= f.hidden_field :id, value: @user.id %><br>
+		<%= f.submit "Save Changes" , class: "user-edit-page-btn"%>
+	<% end %>
 
-<%= button_to("DELETE ACCOUNT", user_path(@user.id), method: :delete) %>
+	<%= button_to("DELETE ACCOUNT", user_path(@user.id), method: :delete , id: "delete-btn") %>
+	
+</div>

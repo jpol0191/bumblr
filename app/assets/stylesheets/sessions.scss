@@ -1,3 +1,86 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$primary-color: #395875;
+$acent-color: #2C4762;
+$active-color: #719744;
+$grey-color: #A1ADB9;
+$white-color: #F2F2F2;
+$dosis-font: 'Dosis', sans-serif;
+$eczar-font:  'Eczar', serif;
+
+#main-page{
+	background: rgba(0,0,0,0.0);
+	width: 500px;
+	height: 300px;
+	font-family: $dosis-font;
+	margin:0 auto;
+	margin-top: 200px;
+	border-radius: 5px;
+	padding:20px;
+}
+
+.login-button{
+	font-family: $dosis-font;
+	font-size: 15px;
+	display: block;
+	margin: 18px auto;
+	width: 200px;
+	height: 40px;
+	font-size: 20px;
+	background: $active-color;
+	color: $white-color;
+	border: none;
+	border-radius: 3px;
+}
+
+.login-text-field{
+	background: rgba(255,255,255,0.2);
+	font-size: 20px;
+	display: block;
+	margin: 20px auto;
+	height: 50px;
+	width: 300px;
+	border: none;
+	border-radius: 5px;
+}
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url('../img/videoframe.jpg') center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}
+

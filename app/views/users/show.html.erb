@@ -24,13 +24,12 @@
 
 
 	<% @posts.reverse.each do |post| %>
-		<div id="user_post">
-			Title:<br> <%= post.title %><br>
-			Body: <br> 
+		<div class="user-post">
+			Title:<p class="user-post-title"><%= post.title %></p><br>
 			<p>
 				<%= post.body %><br>
 			</p> 
-			<hr>
+			<%= link_to("Delete Post", post_path(post.id), method: :delete) %>
 
 			<div class="post_comment">
 				<%= form_for Comment.new do |f|%>
@@ -38,8 +37,8 @@
 					<%= f.hidden_field :post_id, value: post.id %>
 					<%= f.hidden_field :user_id, value: current_user.id%>
 					<%= f.submit "Comment" %>
+					<br style="clear:both;">	
 				<% end %>
-
 				<% comments = post.comments%>
 
 				<% comments.each do |comment|%>
@@ -47,10 +46,13 @@
 						<p>
 							<%= comment.body %>
 						</p>
-						by: <%= link_to "#{comment.user.username}", comment.user %>
+						<div class="comment-author">
+							by: <%= link_to "#{comment.user.username}", comment.user %>
+						</div>
 						<% if current_user.id == comment.user.id %>
 							<%= button_to("Delete Comment", comment_path(comment.id),:params =>{:user_id => post.user_id}, method: :delete) %>
 						<% end %>
+						<br style="clear:both;">
 					</div>
 				<% end %>
 			</div>

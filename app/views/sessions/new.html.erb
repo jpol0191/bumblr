@@ -1,15 +1,21 @@
-<h1>Sessions#new</h1>
+<div class="fullscreen-bg"> 
+  <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video"> 
+    <source src="/assets/eve_cit.mp4" type="video/mp4"> 
+  </video> 
+</div> 
 
+<div id="main-page">
 
-<%= form_for(:session, url: login_path) do |f| %>
-	<%= f.label :username %>
-	<%= f.search_field :username %>
+	<%= form_for(:session, url: login_path) do |f| %>
 
-	<%= f.label :password %>
-	<%= f.password_field :password %>
+		<%= f.search_field :username, placeholder: "Username", class: "login-text-field" %>
 
-	<%= f.submit "Log in" %>
-<% end %>
+		<%= f.password_field :password , placeholder: "Password", class: "login-text-field" %>
+
+		<%= f.submit "Log in", class: "login-button" %>
+	<% end %>
+	
+</div>
 
 <% if  flash[:danger] %>
 	<div id="flash-danger">
