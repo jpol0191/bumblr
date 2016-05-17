@@ -1,28 +1,9 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+==Bumblr
+Bumblr was an assignment at NYCDA. Students were asked to make a micro blog where users can create post that can be commented on by all other users.
 
-Things you may want to cover:
+===Usage 
+* Sign in at the root page
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Once signed in your are directed to your own page where you can create post
